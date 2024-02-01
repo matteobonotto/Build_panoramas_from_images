@@ -22,6 +22,9 @@ def main():
         image = cv2.imread(imagePath)
         images.append(image)
 
+    plt.imshow(image)
+    plt.show()
+
     stitcher = cv2.createStitcher() if imutils.is_cv3() else cv2.Stitcher_create()
     (status, stitched) = stitcher.stitch(images)
 
